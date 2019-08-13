@@ -1,0 +1,22 @@
+      <h2>Mes appareils</h2>
+      
+      <ul class="list-group">
+        <app-appareil-componenet *ngFor="let appareil of Appareils; let i = index"
+                                 [AppareilName]="appareil.name"
+                                 [AppareilStatus]="appareil.status" 
+                                 [index] = "i"
+                                 [img]="appareil.img" 
+                                 [id] = "appareil.id">
+        </app-appareil-componenet>
+      </ul>
+      <button class="btn btn-danger"
+            [disabled]="!isAuth"
+            (click) = "onEteindre()">tout etenindre</button>
+      <button class="btn btn-success"
+            [disabled]="!isAuth"
+            (click) = "onAllumer()">tout allumer</button>
+      <button class = "btn btn-primary"
+              (click) = "onSave()">Enregistrer</button>
+      <button class = "btn btn-primary"
+              (click) = "onFetch()">Recuperer les appareils</button>
+    
